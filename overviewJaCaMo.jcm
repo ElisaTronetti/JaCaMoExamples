@@ -55,7 +55,7 @@ mas overviewJaCaMo {
     
     //in order to make an agent know about an artifact in the workspace,
     //it has to focus on it, using the instruction focus: workspaceName.artifactName
-	agent francois : helloAgentTypes/helloByGUI.asl {
+	/*agent francois : helloAgentTypes/helloByGUI.asl {
     	beliefs: message("Bonjour")
     	focus: jacamo.gui
     }
@@ -78,6 +78,40 @@ mas overviewJaCaMo {
      	//create an instance of the display artifact (it is implemented in the folder src/env/display) and name it gui
      	//place it in a workspace called jacamo
         artifact gui: display.GUIConsole("common")
+    }*/
+    
+    
+	//------ Fourth example ------//
+
+	agent francois : helloAgentTypes/helloByGUI.asl {
+    	beliefs: message("Bonjour")
+    	focus: france.gui
+    	//what is going to happen? (non-deterministic)
+    	//focus: italy.gui
+    }
+    
+    agent maria : helloAgentTypes/helloByGUI.asl {
+    	beliefs: message("Bom dia")
+    	focus: brazil.gui
+    }
+    
+    agent giacomo : helloAgentTypes/helloByGUI.asl {
+    	beliefs: message("Buongiorno")
+    	focus: italy.gui
+    }
+       
+    //we can create more than one workspace (with different names)
+    //the artifacts name in different workspaces can be repeated
+    workspace france {
+        artifact gui: display.GUIConsole("France")
+    }
+    
+    workspace italy {
+        artifact gui: display.GUIConsole("Italy")
+    }
+    
+    workspace brazil {
+        artifact gui: display.GUIConsole("Brazil")
     }
 
 }
