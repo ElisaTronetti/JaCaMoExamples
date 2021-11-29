@@ -83,7 +83,7 @@ mas overviewJaCaMo {
     
 	//------ Fourth example ------//
 
-	agent francois : helloAgentTypes/helloByGUI.asl {
+	/*agent francois : helloAgentTypes/helloByGUI.asl {
     	beliefs: message("Bonjour")
     	focus: france.gui
     	//what is going to happen? (non-deterministic)
@@ -110,6 +110,36 @@ mas overviewJaCaMo {
         artifact gui: display.GUIConsole("Italy")
     }
     
+    workspace brazil {
+        artifact gui: display.GUIConsole("Brazil")
+    }*/
+    
+    
+    //------ Fifth example ------//
+    
+    //check helloInAWorkspace.asl and helloInAllWorkspaces.asl here
+	agent francois : helloAgentTypes/helloInAllWorkspaces.asl {
+    	beliefs: message("Bonjour")
+    	focus: france.gui
+    	focus: italy.gui
+    }
+    
+    agent maria : helloAgentTypes/helloByGUI.asl {
+    	beliefs: message("Bom dia")
+    	focus: brazil.gui
+    }
+    
+    agent giacomo : helloAgentTypes/helloByGUI.asl {
+    	beliefs: message("Buongiorno")
+    	focus: italy.gui
+    }
+    
+     workspace france {
+        artifact gui: display.GUIConsole("France")
+    }
+    workspace italy {
+        artifact gui: display.GUIConsole("Italy")
+    }
     workspace brazil {
         artifact gui: display.GUIConsole("Brazil")
     }
