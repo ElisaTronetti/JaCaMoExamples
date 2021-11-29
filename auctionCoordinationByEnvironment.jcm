@@ -14,6 +14,8 @@
 
 mas auction {
 	
+	//------ First Example ------//
+	
 	agent auctioneer : auctionByEnvironment/auctioneer.asl 
 	
 	agent alice: auctionByEnvironment/participant.asl
@@ -29,4 +31,22 @@ mas auction {
 	
 	//in this example the number of artifact must be define in the jcm file
 	//in the next example it will be the auctioneer to decide the number of artifacts.
+	
+	
+	//------ Second Example ------//
+	
+	/*agent auctioneer: auctionByEnvironment/auctioneerCreatesArtifacts.asl {
+		goals: start(a1, "flight_ticket(paris,athens,15/12/2015)")
+			   start(a2, "flight_ticket(athens,paris,18/12/2015)")
+	}
+	
+	agent alice: auctionByEnvironment/participantCorrectArtifact.asl
+	agent maria: auctionByEnvironment/participantCorrectArtifact.asl
+	agent francois: auctionByEnvironment/participantCorrectArtifact.asl
+	agent giacomo: auctionByEnvironment/participantCorrectArtifact.asl
+	
+	workspace market_place {
+		agents: auctioneer, alice, maria, francois, giacomo // these agents will join the workspace
+		// the artifact is now created by the auctioneer on demand (one for each initial goal)
+	} */
 }
