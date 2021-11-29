@@ -13,7 +13,20 @@
 */
 mas auction {
 	
-	agent auctioneer: auctionByMessages/auctioneer.asl
+	//------ First Example ------//
+	
+	/*agent auctioneer: auctionByMessages/auctioneer.asl
+	
+	agent participant: auctionByMessages/participant.asl {
+		//create 4 instances of the same agent
+		instances: 4
+	}*/
+	
+	
+	//----- Second Example ------//
+	
+	//wait 10 seconds to see the output!!
+	agent auctioneer: auctionByMessages/auctioneerNoWaitAllBids.asl
 	
 	agent participant: auctionByMessages/participant.asl {
 		//create 4 instances of the same agent
