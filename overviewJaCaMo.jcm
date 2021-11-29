@@ -34,20 +34,50 @@ mas overviewJaCaMo {
     
     //------ Second example ------//
     
-    agent francois : helloFromCountry.asl {
+    /*agent francois : helloAgentTypes/helloFromCountry.asl {
     	beliefs: country(fr)
     }
     
-    agent maria : helloFromCountry.asl {
+    agent maria : helloAgentTypes/helloFromCountry.asl {
     	beliefs: country(br)
     }
     
-    agent giacomo : helloFromCountry.asl {
+    agent giacomo : helloAgentTypes/helloFromCountry.asl {
     	beliefs: country(it)
     }
     
-    agent nonBeliever : helloFromCountry.asl {
+    agent nonBeliever : helloAgentTypes/helloFromCountry.asl {
     	beliefs: country(none)
+    }*/
+    
+    
+    //------ Third example ------//
+    
+    //in order to make an agent know about an artifact in the workspace,
+    //it has to focus on it, using the instruction focus: workspaceName.artifactName
+	agent francois : helloAgentTypes/helloByGUI.asl {
+    	beliefs: message("Bonjour")
+    	focus: jacamo.gui
+    }
+    
+    agent maria : helloAgentTypes/helloByGUI.asl {
+    	beliefs: message("Bom dia")
+    	focus: jacamo.gui
+    }
+    
+    agent giacomo : helloAgentTypes/helloByGUI.asl {
+    	beliefs: message("Buongiorno")
+    	focus: jacamo.gui
+    }
+    
+    agent nonBeliever : helloAgentTypes/helloByGUI.asl {
+    	focus: jacamo.gui
+    }
+    
+     workspace jacamo {
+     	//create an instance of the display artifact (it is implemented in the folder src/env/display) and name it gui
+     	//place it in a workspace called jacamo
+        artifact gui: display.GUIConsole("common")
     }
 
 }
