@@ -8,7 +8,7 @@
 
 /* Plans */
 
-//broadcast a tutti i partecipanti l'inizio della auction
+//broadcast to all participants the begin of the auction
 +!start <-  
 	.broadcast(tell, auction(service, flight_ticket(paris,athens,"15/12/2015"))); 
 	.at("now + 10 seconds", {+!decide(flight_ticket(paris,athens,"15/12/2015"))}). 
