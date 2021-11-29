@@ -14,8 +14,22 @@
 
 mas overviewJaCaMo {
 
-    agent sample_agent
-
+    /*First example*/
+    
+    agent francois : helloAgentTypes/hello.asl {
+    	beliefs: message("Bonjour")
+    }
+    
+    agent maria : helloAgentTypes/hello.asl {
+    	beliefs: message("Bom dia")
+    }
+    
+    agent giacomo : helloAgentTypes/hello.asl {
+    	beliefs: message("Buongiorno")
+    }
+    
+    //what is going to happen in this case?
+    agent nonBeliever : helloAgentTypes/hello.asl
     
 
 }
