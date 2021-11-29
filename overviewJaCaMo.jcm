@@ -118,7 +118,7 @@ mas overviewJaCaMo {
     //------ Fifth example ------//
     
     //check helloInAWorkspace.asl and helloInAllWorkspaces.asl here
-	agent francois : helloAgentTypes/helloInAllWorkspaces.asl {
+	/*agent francois : helloAgentTypes/helloInAllWorkspaces.asl {
     	beliefs: message("Bonjour")
     	focus: france.gui
     	focus: italy.gui
@@ -142,6 +142,37 @@ mas overviewJaCaMo {
     }
     workspace brazil {
         artifact gui: display.GUIConsole("Brazil")
+    }*/
+    
+    
+    //------ Sixth example ------//
+    
+    agent francois : helloAgentTypes/helloCooperative.asl {
+    	focus: jacamo.gui
+    }
+    agent maria : helloAgentTypes/helloCooperative.asl {
+    	focus: jacamo.gui
+    }
+    agent giacomo : helloAgentTypes/helloCooperative.asl {
+    	focus: jacamo.gui
+    }
+    agent alice : helloAgentTypes/helloCooperative.asl {
+    	focus: jacamo.gui
+    }
+
+    workspace jacamo {
+    	artifact gui: display.GUIConsole("common")
+    }
+    
+     organisation hello_org: orgHelloWorld.xml {    // the organisational entity is hello_org from spec orgHelloWorld.xml (located in src/org)
+    	group jacamo_team: team {                   // instance group (jacamo_team) from spec team
+    		responsible-for: hello_eng	            // that will be responsible for the execution of scheme hello_sch (defined below)
+    		players: francois rv,                   // the roles of the agents in this group
+    		         maria    rl,
+    		         giacomo  rc,
+    		         alice    rs
+    	}
+    	scheme hello_eng: hello_sch                // instance scheme (hello_eng) from spec hello_sch
     }
 
 }
