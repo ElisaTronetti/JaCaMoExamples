@@ -14,7 +14,7 @@ msg(us,"Good morning").
 
 /* Plans */
 //if at start there is a belief country(C) and there is a belief in the BB that has C, .print the greet matching
-+!start: country(C) & msg(C,M) <- .print(M).
++!start : country(C) & msg(C,M) <- .print(M).
 +!start : true <- .print("No greeting found with your country").
 
 { include("$jacamoJar/templates/common-cartago.asl") }

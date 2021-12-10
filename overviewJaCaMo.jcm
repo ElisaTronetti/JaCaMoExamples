@@ -164,7 +164,7 @@ mas overviewJaCaMo {
     	artifact gui: display.GUIConsole("common")
     }
     
-     organisation hello_org: orgHelloWorld.xml {    // the organisational entity is hello_org from spec orgHelloWorld.xml (located in src/org)
+    organisation hello_org: orgHelloWorld.xml {    // the organisational entity is hello_org from spec orgHelloWorld.xml (located in src/org)
     	group jacamo_team: team {                   // instance group (jacamo_team) from spec team
     		responsible-for: hello_eng	            // that will be responsible for the execution of scheme hello_sch (defined below)
     		players: francois rv,                   // the roles of the agents in this group
